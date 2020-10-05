@@ -3,13 +3,8 @@ import {View, Text} from 'react-native';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import {globalStyles} from '../styles/global';
 
-export default function Home({ navigation })
-{
-    const onPressHandler = () =>{
-        navigation.navigate('ReviewDetails');
-        //navigation.push('ReviewDetails');
-    }
-
+export default function Home({ navigation }){
+    
     const [reviews, setReviews] = useState([
         {title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1'},
         {title: 'Gotta Cath Them All (again)', rating: 4, body: 'lorem ipsum', key: '2'},

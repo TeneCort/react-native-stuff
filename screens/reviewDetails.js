@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {globalStyles} from '../styles/global';
 
-export default function ReviewDetails({ navigation, route })
+export default function ReviewDetails({ route })
 {
     const {item} = route.params;
     

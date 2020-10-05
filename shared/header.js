@@ -9,10 +9,10 @@ export default function Header({navigation, title}){
 
     return (
         <View style={styles.header}>
-            <View>
-                <MaterialIcons name={'menu'} size={28} onPress={openMenu} style={styles.icon}/>
-                <Text style={styles.headerText}>{title}</Text>
-            </View>
+
+            <MaterialIcons name={'menu'} size={28} onPress={openMenu} style={styles.icon}/>
+            <Text style={styles.headerText}>{title}</Text>
+
         </View>
     );
 }
@@ -20,20 +20,19 @@ export default function Header({navigation, title}){
 const styles = StyleSheet.create({
     header: {
         flex: 1,
+        flexDirection: 'row',
         width:'100%',
         height:'100%',
-        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
     },
     headerText: {
         fontWeight: 'bold',
         fontSize: 20,
         color: '#333',
         letterSpacing: 1,
+        alignSelf: 'center'
     },
     icon: {
-        position: 'absolute',
-        right: 200
+        alignSelf: 'flex-start',
     }
 })
