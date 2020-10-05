@@ -1,18 +1,28 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {useState} from 'react';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+import {Drawer} from './routes/drawer';
 
-export default function App() {
-  
-  return (
-  <View style={styles.list}>
-
-  </View>
-  )
+const getFonts = () => {
+  return Font.loadAsync({
+    'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+    'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
+  })
 }
 
-const styles = StyleSheet.create({
-  list: {
-    flex: 1,
-    marginTop: 20,
+export default function App() {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  if(fontsLoaded){
+    return (
+      <Drawer/>
+    ) 
+  }else {
+    return(
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+      />
+    )
   }
-});
+}
